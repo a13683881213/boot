@@ -1,0 +1,54 @@
+@import './mixin.scss';
+@import './config.scss';
+@import './btn.scss';
+.modal {
+    z-index: 9;
+    @include modalpos(fixed);
+    transition: all 1s;
+    &.slide-leave-active {
+        top: 0
+    }
+    &.slide-enter-active {
+        top: 0
+    }
+    &.slide-enter {
+        top: -100%;
+    }
+    .mask {
+        @include modalpos(fixed);
+        background-color: $colorI;
+        opacity: 0.3;
+        .tan {
+            z-index: 10;
+            opacity: 1;
+            @include modalpos(absolute, 40%, 50%, auto, 660px);
+            // 不给高度 让它自适应
+            background-color: white;
+            transform: translate(-50%, -50%);
+            .header {
+                text-align: center;
+                height: 60px;
+                line-height: 60px;
+                font-size: 20px;
+                .lose {
+                    @include bgImg2(absolute, 16px, 14px, '/imgs/icon/icon-close.png', 23px, 25px);
+                    transition: all 0.6;
+                    &:hover {
+                        transform: scale(1.5)
+                    }
+                }
+            }
+            .body {
+                text-align: center;
+                margin: 0 0 20px 0;
+                font-size: 15px;
+            }
+            .footer {
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                color: black;
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+ .btn {
+     display: inline-block;
+     width: 110px;
+     height: 30px;
+     text-align: center;
+     background-color: #00b7ff;
+     cursor: pointer;
+ }
+ 
+ .btn-group {
+     .btn {
+         margin-right: 20px;
+         &:last-child {
+             margin-right: 0;
+         }
+     }
+ }
+ 
+ .btn-large {
+     width: 200px;
+     height: 30px;
+ }
